@@ -1,0 +1,1 @@
+exports.FAST2SMS = "qNzILjZ3WnlodhDBfEJPbvXFpcT105tKk9V4s8ug6Uy2SMQHAiyGIlV7btaNXfHBunwLcxvFZh02gT48"
