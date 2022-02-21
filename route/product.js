@@ -39,5 +39,5 @@ module.exports = function(app) {
     //--
     app.get("/api/product/getProductPrice", productcontroller.getProductPrice);
     app.post("/api/product/updateProductPrice", productcontroller.updateProductPrice);
-    app.post("/api/product/getProductPriceByUserType/:userType/:productId", productcontroller.getProductPriceByUserType);
+    app.get("/api/product/getProductPriceByUserType/:userType/:productId", productcontroller.getProductPriceByUserType);
 };

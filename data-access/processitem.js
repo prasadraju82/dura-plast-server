@@ -53,7 +53,7 @@ const getItemsByCustomer = (customerId) => {
                 if (err){
                     return reject(err)
                 } 
-                console.log(rows);
+                //console.log(rows);
                 resolve(rows[0])
             });
         });
@@ -163,8 +163,8 @@ const getCorrugation = () => {
                 if(err){
                     return reject(err)
                 }
-                console.log(rows);
-                console.log(rows[0]);
+                // console.log(rows);
+                // console.log(rows[0]);
                 resolve(rows);
             })
         })
@@ -204,7 +204,7 @@ const getDrawing = (profileId) => {
 
 const getSeries = () => {
     return new Promise((resolve, reject) => {
-        console.log("Series");
+        //console.log("Series");
         mysqlconnection.pool.getConnection(function(err, connection){
             console.log(err);
             connection.query("SELECT id,name FROM series ORDER BY id", function(err, rows){
@@ -213,7 +213,7 @@ const getSeries = () => {
                     console.log(err)
                     return reject(err)
                 }
-                console.log(rows)
+          //      console.log(rows)
                 resolve(rows);
             })
             
@@ -352,7 +352,7 @@ const getOrderCount = (customerId) => {
 }
 
 const getOrderSummaryCustomer = (customerId) => {
-    console.log(customerId);
+    //console.log(customerId);
     return new Promise((resolve, reject) => {
         mysqlconnection.pool.getConnection(function(err, connection){
             connection.query("SELECT ItemOrderId,ItemId, ItemName, NoOfItems, OrderDate FROM itemorder WHERE NoOfItems IS NOT NULL AND OrderStatus = 1 AND IsActive = TRUE AND customerId = " + customerId + " ORDER BY ItemOrderId", function(err, rows){

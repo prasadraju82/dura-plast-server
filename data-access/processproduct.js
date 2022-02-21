@@ -29,7 +29,7 @@ const updateProductPrice = (productDetail) =>{
                 if (err){
                     return reject(err)
                 } 
-                console.log(rows);
+                //console.log(rows);
                 resolve(rows)
             });
         });
@@ -37,14 +37,16 @@ const updateProductPrice = (productDetail) =>{
 }
 
 getProductPriceByUserType = (userType, productId) => {
+    console.log(userType);
+    console.log(productId);
     return new Promise((resolve, reject) => {
         mysqlconnection.pool.getConnection(function(err, connection){
-            connection.query(`ProcgetProductPriceByUserType('${userType}', ${productId})`, function(err, rows){
+            connection.query(`CALL ProcgetProductPriceByUserType('${userType}', ${productId})`, function(err, rows){
                 connection.release();
                 if (err){
                     return reject(err)
                 } 
-                //console.log(rows);
+                console.log(rows);
                 resolve(rows[0][0]);
             });
         });

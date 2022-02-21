@@ -25,8 +25,8 @@ exports.updateProductPrice = (req, res) => {
 }
 
 exports.getProductPriceByUserType = (req, res) => {
-    let userType = req.param.userType;
-    let productId = req.param.productId;
+    let userType = req.params.userType;
+    let productId = req.params.productId;
 
     processproduct.getProductPriceByUserType(userType, productId).then((result) => {
         res.send({message: "Success", data: result});
