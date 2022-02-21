@@ -37,8 +37,6 @@ const updateProductPrice = (productDetail) =>{
 }
 
 getProductPriceByUserType = (userType, productId) => {
-    console.log(userType);
-    console.log(productId);
     return new Promise((resolve, reject) => {
         mysqlconnection.pool.getConnection(function(err, connection){
             connection.query(`CALL ProcgetProductPriceByUserType('${userType}', ${productId})`, function(err, rows){
